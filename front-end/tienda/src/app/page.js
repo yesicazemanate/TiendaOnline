@@ -9,7 +9,8 @@ export default function Home() {
    <div class="ContenedorPrincipalCartas">
    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
     <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    
+    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
    </div>
   </>
   );

@@ -1,6 +1,6 @@
 .ContenedorPrincipalCartas{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     width: 50%;
+    grid-template-columns: 15% 15% 15%;
 }
 /*fgd*/
