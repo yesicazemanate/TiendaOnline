@@ -20,6 +20,7 @@
     transform: translate(0px,-5px);
 }
 .Imagen{
+    width: 100%;
     display: flex;
     justify-content: center;
    
@@ -32,22 +33,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.contenedorDeCartasProducto{
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 15%;
-    background-color: rgba(202, 198, 198, 0.397);
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-}
-.Imagen{
-    display: flex;
-    justify-content: center;
-}
-.Texto{
-    text-align: center;
-}
 
 
 

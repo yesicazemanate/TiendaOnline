@@ -67,3 +67,9 @@
     transform: scale(1.1);
     /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse */
 }
+.Vestidos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

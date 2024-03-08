@@ -1,5 +1,6 @@
 import Image from "next/image"
 import "./Style.css"
+
 export default function CardProductos({imagen, titulo}) {
   return (
    <>
