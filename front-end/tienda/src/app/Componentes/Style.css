@@ -18,3 +18,24 @@
 .Texto{
     text-align: center;
 }
+
+.contenedorDeCartasProducto{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 15%;
+    background-color: rgba(202, 198, 198, 0.397);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.Imagen{
+    display: flex;
+    justify-content: center;
+}
+.Texto{
+    text-align: center;
+}
+
+
+
+
