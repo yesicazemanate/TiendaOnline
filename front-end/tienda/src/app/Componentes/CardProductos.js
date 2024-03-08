@@ -1,12 +1,12 @@
 import Image from "next/image"
-
+import "./Style.css"
 export default function CardProductos({imagen, titulo}) {
   return (
    <>
-    <div>
+    <div class= "contenedorDeCartasProducto">
         
         <div>
-            <Image src={imagen}></Image>
+            <Image src={imagen} width={100} height={100}></Image>
         </div>
         <div>
             <h2>{titulo}</h2>

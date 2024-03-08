@@ -5,8 +5,7 @@ export default function Home() {
   return (
   <>
    <Navbar/>
-   <CardProductos
-   titulo="Stefa" image="./hugs/sfs"/>
+   <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
   </>
   );
 }
