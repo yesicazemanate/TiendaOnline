@@ -6,11 +6,17 @@ export default function Home() {
   return (
   <>
    <Navbar/>
+
+
    <div class="ContenedorPrincipalCartas">
-   <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
+   <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
    </div>
   </>
   );
