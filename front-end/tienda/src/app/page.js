@@ -16,11 +16,17 @@ export default function Home() {
         <CardCategorias title="Blusas" image="/img/blusas.jpg" />
         <CardCategorias title="Pantalones" image="/img/pantalones.jpg" />
       </div>
+
+
    <div class="ContenedorPrincipalCartas">
-   <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
+   <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
+    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
    </div>
   </>
   );
