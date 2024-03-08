@@ -5,10 +5,10 @@ export default function CardProductos({imagen, titulo}) {
    <>
     <div class= "contenedorDeCartasProducto">
         
-        <div>
-            <Image src={imagen} width={100} height={100}></Image>
+        <div class="Imagen">
+            <Image src={imagen} width={150} height={150}></Image>
         </div>
-        <div>
+        <div class="Texto">
             <h2>{titulo}</h2>
         </div>
         
