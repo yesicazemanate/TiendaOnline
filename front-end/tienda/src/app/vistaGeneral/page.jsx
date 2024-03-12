@@ -72,7 +72,7 @@ export default function Home() {
       {verShorts === 'shorts'&& <Shorts/>}
       {verBlusas === 'blusas' && <Blusas />}
       {verPantalones === 'pantalones' && <Pantalones/>}
-      <Detail/>
+      <Detail imagenn="/img/shorts.jpg" nombre="Short1" />
       </div>
 
   </>
