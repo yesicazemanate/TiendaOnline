@@ -72,7 +72,10 @@ export default function Home() {
       {verShorts === 'shorts'&& <Shorts/>}
       {verBlusas === 'blusas' && <Blusas />}
       {verPantalones === 'pantalones' && <Pantalones/>}
-      <Detail imagenn="/img/shorts.jpg" nombre="Short1" />
+      <Detail imagenn="/img/shorts.jpg" nombre="Short1"
+      descripcion="Short Blanco con conturon Negro echo En MEDELLIN"
+      precio="20.000"
+      />
       </div>
 
   </>
