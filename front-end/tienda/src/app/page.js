@@ -1,16 +1,10 @@
-import Navbar from "./Componentes/Navbar";
+import Home from "./vistaGeneral/page";
 import "./globals.css"
-import"./StylePage.css"
-import CardProductos from "./Componentes/CardProductos";
-export default function Home() {
+
+export default function page() {
   return (
-  <>
-   <Navbar/>
-   <div class="ContenedorPrincipalCartas">
-   <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="Vestido (Name Vestido)" imagen="/img/12484244.jpg"/>
-    
-   </div>
-  </>
-  );
+    <div>
+      <Home/>
+    </div>
+  )
 }
