@@ -11,14 +11,12 @@
 
 /* Estilos para el contenedor principal */
 .Contenedor-principal-categorias {
+    position: relative;
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
-    /* Distribuye el espacio entre las tarjetas de manera uniforme */
     flex-wrap: wrap;
-    /* Permite que las tarjetas se ajusten en filas según el ancho del contenedor */
     gap: 20px;
-    /* Espacio entre tarjetas */
 }
 
 /* Estilos básicos para las tarjetas */
@@ -67,9 +65,14 @@
     transform: scale(1.1);
     /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse */
 }
-.Vestidos{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.ContenedorDedetalleYvestidosGeneral{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+z-index: 10;
+}
+.ContenedorVerProductosYDetalle{
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
 }

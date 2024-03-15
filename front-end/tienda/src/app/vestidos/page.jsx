@@ -1,10 +1,22 @@
 import CardProductos from "../Componentes/CardProductos"
+// import Detailvista from "../detalle/page";
+import VerDetallevestidos from "./VerDetallevestidos";
+// import { useState } from "react"
 export default function Vestidos() {
-  return (
-    <div>
+  // const [verDetailVestidos,setverDetailVestidos] = useState('vestidos')
+  // const handleverDetalleVestidos =() => {
+  //   setverDetailVestidos(verDetailVestidos==='vestidos'? 'detalle': 'vestidos')
+  // }
+   return (
+    <>    <VerDetallevestidos/>
+    <div class="ContenedorDedetalleYvestidosGeneral">
          <div class="ContenedorPrincipalCartas">
-            
-   <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+         
+          <div>  
+   <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg">
+   </CardProductos>
+   <p >Darclick</p>
+   </div>
     <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
     <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
     <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
@@ -13,9 +25,10 @@ export default function Vestidos() {
     <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
     <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
    </div>
-   //AQUI ES EL QUE OCUPA EL 70% DE LA PAGINA!
-   //IMPORTAR EL DATALLE
+   
 
     </div>
+    </>
+
   )
 }
