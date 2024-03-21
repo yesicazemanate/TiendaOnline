@@ -4,11 +4,11 @@ from flask_cors import CORS
 import database as dbase
 app = Flask(__name__)
 db= dbase.dbConnection()
-
 CORS(app)
 #-------------BLUSAS--------------------------------------------
 blusa = db['Blusa']
-print(blusa)
+pantalon = db['Pantalon']
+
 @app.route('/blusa/get', methods=['GET'])
 def getBlusas():
     try:
@@ -86,6 +86,28 @@ def update_blusa(id):
         #----------------------------------PANTALON----------------------------------
 #GET
 
+
+
+@app.route('/pantalon/get', methods=['GET'])
+def getPantalon():
+    try:
+        pantalones = []
+        for doc in pantalon.find({}):
+            pantalones.append({
+                '_id': str(ObjectId(doc['_id'])),
+                'TipoPantalon': doc['TipoPantalon'],
+                'Precio': doc['Precio'],
+                'Color': doc['Color'],
+                'Talla': doc['Talla'],
+                'Imagen': doc['Image']
+            })
+        return jsonify(pantalones), 200  # Devuelve los pantalones con código de estado 200 (OK)
+    except Exception as e:
+        print(e)  # Registra el error en la consola
+        return jsonify({'error': 'Error al traer los pantalones'}), 500 
+
+#GET ID
+
 #POST
 
 #DELETE
@@ -94,6 +116,8 @@ def update_blusa(id):
 
         #----------------------------------SHORT------------------------------------
 #GET
+
+#GET ID
 
 #POST
 
@@ -104,6 +128,8 @@ def update_blusa(id):
         #-----------------------------------SUDADERA-----------------------------------
 #GET
 
+#GET ID
+
 #POST
 
 #DELETE
@@ -111,7 +137,9 @@ def update_blusa(id):
 #PUT
 
         #-------------------------------------VESTIDO--------------------------------
-        #GET
+#GET
+
+#GET ID
 
 #POST
 
