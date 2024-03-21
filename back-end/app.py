@@ -8,11 +8,11 @@ app.config['MONGO_URI'] = 'mongodb+srv://yemaze123yz:k4yIZBpNklEKdviw@cluster0.7
 mongo = PyMongo(app)
 
 CORS(app)
- db = mongo.db.Blusa
+
 @app.route('/blusas/get', methods=['GET'])
 def getBlusas():
     users =[]
-    for doc in db.Blusa.find({}):
+    for doc in db.find({}):
         users.append({
             '_id':str(ObjectId(doc['_id'])),
             'TipoBlusa': doc['TipoBlusa'],
