@@ -1,22 +1,34 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import database as dbase
 from blusa import Blusa
+from pantalon import Pantalon
+from short import Short
+from sudadera import Sudadera
+from vestido import Vestido
 
 db= dbase.dbConnection()
 app = Flask (__name__)
 #----------------------BLUSAS---------------------------
-#metodo get
-@app.route('/blusa')
+@app.route('/')
 def home():
     return render_template('index.html')
-
+    #metodo get
+@app.route('/blusas/get', methods=['GET'])
+def obtenerBlusa():
+    try:
+        if datos:
+            return jsonify(datos)
+        else:
+            return jsonify({"mensaje": "No hay blusas disponibles"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 #metodo Post
-@app.route('/blusas', methods=['POST'])
+#@app.route('/blusas', methods=['POST'])
 
 
 #metodo put
-@app.route('/blusas/put/<int: id>', methods=['POST'])
-def edit(id):
+@app.route('/blusas/put/<int:id>', methods=['POST'])
+def edit_blusa(id):
     blusas= db['Blusas']
     TipoBlusa= request.form['TipoBlusa']
     Precio= request.form['Precio']
@@ -31,8 +43,8 @@ def edit(id):
     else:
         return notFound
 #Meotodo delete
-@app.route('/blusas/delete/<int: id>')
-def delete(id):
+@app.route('/blusas/delete/<int:id>')
+def delete_blusa(id):
     blusa = db('Blusa')
     blusa.delete_one({'_id': id})
     return redirect(url_for('home'))
@@ -45,8 +57,8 @@ def delete(id):
 #post 
 
 #put
-@app.route('/pantalon/put/<int: id>', methods=['POST'])
-def edit(id):
+@app.route('/pantalon/put/<int:id>', methods=['POST'])
+def edit_pantalon(id):
     pantalon= db['Pantalon']
     TipoPantalon= request.form['TipoPantalon']
     Precio= request.form['Precio']
@@ -62,8 +74,8 @@ def edit(id):
         return notFound
 
 #delete
-@app.route('/pantalon/delete/<int: id>')
-def delete(id):
+@app.route('/pantalon/delete/<int:id>')
+def delete_pantalon(id):
     pantalon = db('Pantalon')
     pantalon.delete_one({'_id': id})
     return redirect(url_for('home'))
@@ -74,8 +86,8 @@ def delete(id):
 #POST
 
 #PUT
-@app.route('/short/put/<int: id>', methods=['POST'])
-def edit(id):
+@app.route('/short/put/<int:id>', methods=['POST'])
+def edit_short(id):
     short= db['Short']
     TipoShort= request.form['TipoShort']
     Precio= request.form['Precio']
@@ -90,8 +102,8 @@ def edit(id):
     else:
         return notFound
 #DELETE
-@app.route('/short/delete/<int: id>')
-def delete(id):
+@app.route('/short/delete/<int:id>')
+def delete_short(id):
     short = db('Short')
     short.delete_one({'_id': id})
     return redirect(url_for('home'))
@@ -102,8 +114,8 @@ def delete(id):
 #POST
 
 #PUT
-@app.route('/sudadera/put/<int: id>', methods=['POST'])
-def edit(id):
+@app.route('/sudadera/put/<int:id>', methods=['POST'])
+def edit_sudadera(id):
     sudadera= db['Sudadera']
     TipoSudadera= request.form['TipoSudadera']
     Precio= request.form['Precio']
@@ -118,8 +130,8 @@ def edit(id):
     else:
         return notFound
 #DELETE
-@app.route('/sudadera/delete/<int: id>')
-def delete(id):
+@app.route('/sudadera/delete/<int:id>')
+def delete_sudadera(id):
     sudadera = db('Sudadera')
     sudadera.delete_one({'_id': id})
     return redirect(url_for('home'))
@@ -131,8 +143,8 @@ def delete(id):
 #POST 
 
 #PUT
-@app.route('/vestido/put/<int: id>', methods=['POST'])
-def edit(id):
+@app.route('/vestido/put/<int:id>', methods=['POST'])
+def edit_vestido(id):
     vestido= db['Vestido']
     TipoVestido= request.form['TipoVestido']
     Precio= request.form['Precio']
@@ -147,8 +159,8 @@ def edit(id):
     else:
         return notFound
 #DELETE
-@app.route('/vestido/delete/<int: id>')
-def delete(id):
+@app.route('/vestido/delete/<int:id>')
+def delete_vestido(id):
     vestido = db('Vestido')
     vestido.delete_one({'_id': id})
     return redirect(url_for('home'))
@@ -165,9 +177,5 @@ def notFound(error=None):
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
 
-<<<<<<< HEAD
-app = Flask(__name__)
 
-@app.route('/')
-=======
->>>>>>> bb997953b4962ae007827bdbaf85203a09479224
+
