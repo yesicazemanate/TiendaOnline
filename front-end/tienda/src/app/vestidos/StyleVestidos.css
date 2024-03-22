@@ -1,0 +1,19 @@
+
+.ContenedorDedetalleYvestidosGeneral{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 10;
+    }
+    .ContenedorPrincipalCartas {
+        margin: 10px;
+        display: grid;
+        width: 65%;
+        grid-template-columns: 22% 22% 22% 22% ;
+        grid-gap:20px;
+        justify-content: center;
+    }
+.ContenedorDetalle{
+    display: flex;
+    width: 30%;
+}
