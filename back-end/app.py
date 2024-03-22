@@ -96,14 +96,15 @@ def getPantalon():
             pantalones.append({
                 '_id': str(ObjectId(doc['_id'])),
                 'TipoPantalon': doc['TipoPantalon'],
-                'Precio': doc['Precio'],
+                'Precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
                 'Imagen': doc['Image']
             })
+            
         return jsonify(pantalones), 200  # Devuelve los pantalones con código de estado 200 (OK)
     except Exception as e:
-        print(e)  # Registra el error en la consola
+        print("error:", e)  # Registra el error en la consola
         return jsonify({'error': 'Error al traer los pantalones'}), 500 
 
 #GET ID
