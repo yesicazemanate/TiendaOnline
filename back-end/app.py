@@ -108,9 +108,40 @@ def getPantalon():
         return jsonify({'error': 'Error al traer los pantalones'}), 500 
 
 #GET ID
+@app.route('/pantalon/get/<id>', methods=['GET'])
+def get_pantalon(id):
+    pantalones=pantalon.find_one({'_id':ObjectId(id)})
+    return jsonify({
+         '_id': str(ObjectId(pantalones['_id'])),
+                'TipoPantalon': pantalones['TipoPantalon'],
+                'precio': pantalones['precio'],
+                'Color': pantalones['Color'],
+                'Talla': pantalones['Talla'],
+                'Imagen': pantalones['Image']
+    })
 
 #POST
+@app.route('/pantalon/post', methods=['POST'])
+def create_pantalon():
+    data = request.json
+    TipoPantalon = data.get('TipoPantalon')
+    precio = data.get('precio')
+    Color = data.get('Color')
+    Talla = data.get('Talla')
+    Image = data.get('Image')
 
+    if not all([TipoPantalon, precio, Color, Talla, Image]):
+        return jsonify({'error': 'Se requieren todos los campos'}), 400
+
+    pantalon.insert_one({
+        'TipoPantalon': TipoPantalon,
+        'precio': precio,
+        'Color': Color,
+        'Talla': Talla,
+        'Image':Image
+    })
+
+    return 'Datos recibidos correctamente'
 #DELETE
 
 #PUT
