@@ -1,6 +1,5 @@
-import "./Style.css"
-import "./Style.css";
-import "../Componentes/navbar.css"
+
+import "./navbar.css"
 export default function Navbar() {
   return (
     <>

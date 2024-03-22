@@ -1,10 +1,10 @@
 import Image from "next/image"
-import "./Style.css"
+import "./StyleCardProductos.css"
 
-export default function CardProductos({imagen, titulo}) {
+export default function CardProductos({imagen, titulo, onClick}) {
   return (
    <>
-    <div class= "contenedorDeCartasProducto">
+    <div onClick={onClick} class= "contenedorDeCartasProducto">
         <div class="Imagen">
             <Image src={imagen} width={150} height={150}></Image>
         </div>
