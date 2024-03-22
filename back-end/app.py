@@ -8,7 +8,9 @@ CORS(app)
 #-------------BLUSAS--------------------------------------------
 blusa = db['Blusa']
 pantalon = db['Pantalon']
-
+short = db['Short']
+sudadera= db['Sudadera']
+vestido= db['Vestido']
 @app.route('/blusa/get', methods=['GET'])
 def getBlusas():
     try:
@@ -112,19 +114,45 @@ def getPantalon():
 #POST
 
 #DELETE
-
+@app.route('/pantalon/delete/<id>', methods=['DELETE'])
+def delete_pantalon(id):
+    pantalon.delete_one({'_id':ObjectId(id)})
+    return jsonify('pantalon eliminado')
 #PUT
-
+@app.route('/pantalon/put/<id>', methods=['PUT'])
+def update_pantalon(id):
+    
+    blusa.update_one({'_id': ObjectId(id)}, {'$set': {
+        'TipoPantalon': request.json.get('TipoPantalon', ''),
+        'precio': request.json.get('Precio', ''),
+        'Color': request.json.get('Color', ''),
+        'Talla': request.json.get('Talla', ''),
+        'Image':request.json.get('Image', '')
+    }})
+    return jsonify({'msg': 'pantalon actualizado'})
         #----------------------------------SHORT------------------------------------
 #GET
 
 #GET ID
 
 #POST
-
 #DELETE
-
+@app.route('/short/delete/<id>', methods=['DELETE'])
+def delete_short(id):
+    short.delete_one({'_id':ObjectId(id)})
+    return jsonify('short eliminado')
 #PUT
+@app.route('/short/put/<id>', methods=['PUT'])
+def update_short(id):
+    
+    blusa.update_one({'_id': ObjectId(id)}, {'$set': {
+        'TipoShort': request.json.get('TipoShort', ''),
+        'precio': request.json.get('Precio', ''),
+        'Color': request.json.get('Color', ''),
+        'Talla': request.json.get('Talla', ''),
+        'Image':request.json.get('Image', '')
+    }})
+    return jsonify({'msg': 'short actualizado'})
 
         #-----------------------------------SUDADERA-----------------------------------
 #GET
@@ -132,10 +160,23 @@ def getPantalon():
 #GET ID
 
 #POST
-
 #DELETE
-
+@app.route('/sudadera/delete/<id>', methods=['DELETE'])
+def delete_sudadera(id):
+    sudadera.delete_one({'_id':ObjectId(id)})
+    return jsonify('sudadera eliminado')
 #PUT
+@app.route('/sudadera/put/<id>', methods=['PUT'])
+def update_sudadera(id):
+    
+    sudadera.update_one({'_id': ObjectId(id)}, {'$set': {
+        'TipoSudadera': request.json.get('TipoSudadera', ''),
+        'precio': request.json.get('Precio', ''),
+        'Color': request.json.get('Color', ''),
+        'Talla': request.json.get('Talla', ''),
+        'Image':request.json.get('Image', '')
+    }})
+    return jsonify({'msg': 'sudadera actualizado'})
 
         #-------------------------------------VESTIDO--------------------------------
 #GET
@@ -145,8 +186,21 @@ def getPantalon():
 #POST
 
 #DELETE
-
+@app.route('/vestido/delete/<id>', methods=['DELETE'])
+def delete_vestido(id):
+    vestido.delete_one({'_id':ObjectId(id)})
+    return jsonify('vestido eliminado')
 #PUT
-
+@app.route('/vestido/put/<id>', methods=['PUT'])
+def update_vestido(id):
+    
+    vestido.update_one({'_id': ObjectId(id)}, {'$set': {
+        'TipoVestido': request.json.get('TipoVestido', ''),
+        'precio': request.json.get('Precio', ''),
+        'Color': request.json.get('Color', ''),
+        'Talla': request.json.get('Talla', ''),
+        'Image':request.json.get('Image', '')
+    }})
+    return jsonify({'msg': 'vestido actualizado'})
 if __name__ == "__main__":
     app.run(debug=True)
