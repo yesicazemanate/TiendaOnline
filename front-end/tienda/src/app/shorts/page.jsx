@@ -1,5 +1,6 @@
 import CardProductos from "../Componentes/CardProductos/CardProductos"
-import { useState } from "react"
+import axios from "axios";
+import { useState,useEffect } from "react"
 import Detailvista from "../detalle/page"
 import "../vestidos/StyleVestidos.css"
 export default function Shorts() {
@@ -7,17 +8,35 @@ export default function Shorts() {
   const handleverDetalle = () => {
     setverdetalleSudaderas(verDetalleShorts=== 'shorts'? 'detalle': 'shorts')
   }
+  const [Shorts, setShorts] = useState([])
+  useEffect(()=> {
+    const consumo = async () =>{
+      try{
+        const respuesta = await axios.get('http://127.0.0.1:5000/short/get ') 
+        const data = respuesta.data
+        setShorts(data.short)
+      }
+      catch(error){
+        console.log(error)
+      }
+    }
+    consumo();
+  },[])
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
-        <CardProductos titulo="Shorts" imagen="/img/shorts.jpg" onClick={handleverDetalle}/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
-        <CardProductos titulo={Shorts} imagen="/img/shorts.jpg"/>
+        <CardProductos titulo="NO BD" imagen="/img/shorts.jpg" onClick={handleverDetalle}/>
+        {
+          Shorts.map((short,index)=>(
+            <CardProductos
+            key={index}
+            titulo={short.TipoShort}
+            imagen={short.Image}
+            onClick={handleverDetalle}
+            />
+          ))
+        }
+       
       </div>
       <div class="ContenedorDetalle">
         {verDetalleShorts === 'detalle' && <Detailvista

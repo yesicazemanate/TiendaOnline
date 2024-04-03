@@ -8,7 +8,7 @@ import { useState } from "react";
 import Shorts from "../shorts/page";
 import Blusas from "../blusas/page";
 import Pantalones from "../pantalones/page";
-
+import axios from 'axios'
 export default function Home() {
   const [verVestidos, setverVestidos] = useState('vistaGeneral')
 

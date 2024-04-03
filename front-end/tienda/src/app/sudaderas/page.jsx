@@ -1,6 +1,8 @@
 "use client"
+import axios from "axios";
+
 import"../vestidos/StyleVestidos.css"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import Detailvista from "../detalle/page"
 import CardProductos from "../Componentes/CardProductos/CardProductos"
 export default function Sudaderas() {
@@ -9,21 +11,38 @@ export default function Sudaderas() {
   const handleverDetalleSudaderas = () => {
     setverdetalleSudaderas(verdetalleSudaderas=== 'sudaderas'? 'detalle': 'sudaderas')
   }
+
+  const [Sudadera, setSudadera] = useState([])
+  useEffect(() => {
+    const consumo = async () => {
+      try {
+        const respuesta = await axios.get('http://127.0.0.1:5000/sudadera/get');
+        const data = respuesta.data;
+        setSudadera(data.sudadera); 
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    consumo();
+  }, []);
   return (
     <>
     <div class="ContenedorDedetalleYvestidosGeneral">
         <div class="ContenedorPrincipalCartas">
 
        <CardProductos 
-       titulo=" (Name sudaderas)" 
+       titulo=" (Name sudaderas)No de BD" 
        imagen="/img/sudaderas.jpg" 
        onClick={handleverDetalleSudaderas}/>
-    <CardProductos titulo=" (Name sudaderas)" imagen="/img/sudaderas.jpg"/>
-    <CardProductos titulo=" (Name sudaderas)" imagen="/img/sudaderas.jpg"/>
-    <CardProductos titulo="(Name sudaderas)" imagen="/img/sudaderas.jpg"/>
-    <CardProductos titulo="(Name sudaderas)" imagen="/img/sudaderas.jpg"/>
-    <CardProductos titulo="(Name sudaderas)" imagen="/img/sudaderas.jpg"/>
-    <CardProductos titulo="(Name sudaderas)" imagen="/img/sudaderas.jpg"/>
+
+    {Sudadera.map((sudadera, index) => (
+            <CardProductos
+              key={index}
+              titulo={sudadera.TipoSudadera}  
+              imagen={sudadera.Image} 
+              onClick={handleverDetalleSudaderas}
+            />
+          ))}
     </div>
     <div class="ContenedorDetalle">
       {verdetalleSudaderas === 'detalle' && <Detailvista 

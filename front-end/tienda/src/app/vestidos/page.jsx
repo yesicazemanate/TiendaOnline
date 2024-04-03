@@ -1,14 +1,31 @@
 "use client"
+import axios from "axios";
 import CardProductos from "../Componentes/CardProductos/CardProductos"
 import Detailvista from "../detalle/page";
 import "./StyleVestidos.css"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 export default function Vestidos() {
   const [verDetailVestidos,setverDetailVestidos] = useState('vestidos')
   
   const handleverDetalleVestidos =() => {
     setverDetailVestidos(verDetailVestidos === 'vestidos'? 'detalle': 'vestidos')
   }
+  
+  //Consumo Api
+  const [Vestidos, setVestidos] = useState([]);
+  useEffect(()=>{
+    const consumo = async()=>{
+      try{
+        const respuesta = await axios.get('http://127.0.0.1:5000/vestido/get')
+        const data = respuesta.data
+        setVestidos(data.vestido)
+      }
+      catch(error){
+        console.log(error)
+      }
+    }
+    consumo();
+  },[])
    return (
     <>   
 
@@ -16,16 +33,19 @@ export default function Vestidos() {
     <div class="ContenedorPrincipalCartas">
         
    <CardProductos 
-   titulo=" (Name Vestido)" 
+   titulo="NO BD" 
    imagen="/img/12484244.jpg" 
    onClick={handleverDetalleVestidos}/>
-    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo="(Name Vestido)" imagen="/img/12484244.jpg"/>
-    <CardProductos titulo=" (Name Vestido)" imagen="/img/12484244.jpg"/>
+    {
+      Vestidos.map((short,index)=>(
+        <CardProductos
+        key={index}
+        titulo={short.TipoVestido}
+        imagen={short.Image}
+        onClick={handleverDetalleVestidos}
+        />
+      ))
+    }
    </div>
 
    <div class="ContenedorDetalle">
