@@ -18,7 +18,7 @@ export default function Vestidos() {
       try{
         const respuesta = await axios.get('http://127.0.0.1:5000/vestido/get')
         const data = respuesta.data
-        setVestidos(data.vestido)
+        setVestidos(data)
       }
       catch(error){
         console.log(error)
@@ -26,27 +26,28 @@ export default function Vestidos() {
     }
     consumo();
   },[])
+  console.log(Vestidos.Imagen)
    return (
     <>   
 
     <div class="ContenedorDedetalleYvestidosGeneral">
-    <div class="ContenedorPrincipalCartas">
+   <div class="ContenedorPrincipalCartas">
         
-   <CardProductos 
+   {/* <CardProductos 
    titulo="NO BD" 
    imagen="/img/12484244.jpg" 
-   onClick={handleverDetalleVestidos}/>
+   onClick={handleverDetalleVestidos}/> */}
     {
-      Vestidos.map((short,index)=>(
+      Vestidos.map((short)=>(
         <CardProductos
-        key={index}
+        key={short._id}
         titulo={short.TipoVestido}
-        imagen={short.Image}
+        imagen={short.Imagen}
         onClick={handleverDetalleVestidos}
         />
       ))
     }
-   </div>
+  </div>
 
    <div class="ContenedorDetalle">
    {verDetailVestidos === 'detalle'&& <Detailvista
