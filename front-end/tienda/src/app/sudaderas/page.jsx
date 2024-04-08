@@ -18,7 +18,7 @@ export default function Sudaderas() {
       try {
         const respuesta = await axios.get('http://127.0.0.1:5000/sudadera/get');
         const data = respuesta.data;
-        setSudadera(data.sudadera); 
+        setSudadera(data); 
       } catch (error) {
         console.log(error);
       }
@@ -30,16 +30,13 @@ export default function Sudaderas() {
     <div class="ContenedorDedetalleYvestidosGeneral">
         <div class="ContenedorPrincipalCartas">
 
-       <CardProductos 
-       titulo=" (Name sudaderas)No de BD" 
-       imagen="/img/sudaderas.jpg" 
-       onClick={handleverDetalleSudaderas}/>
+   
 
-    {Sudadera.map((sudadera, index) => (
+    {Sudadera.map((sudadera) => (
             <CardProductos
-              key={index}
+              key={sudadera}
               titulo={sudadera.TipoSudadera}  
-              imagen={sudadera.Image} 
+              imagen={sudadera.Imagen} 
               onClick={handleverDetalleSudaderas}
             />
           ))}

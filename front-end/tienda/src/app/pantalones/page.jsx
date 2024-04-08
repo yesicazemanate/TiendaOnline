@@ -17,7 +17,7 @@ export default function Pantalones() {
       try{
         const respuesta = await axios.get('http://127.0.0.1:5000/pantalon/get')
         const data = respuesta.data
-        setPantalones(data.pantalon)
+        setPantalones(data)
       }
       catch(error){
         console.log(error)
@@ -29,22 +29,15 @@ export default function Pantalones() {
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
-      {Pantalones.map((pantalon, index) => (
+      {Pantalones.map((pantalon) => (
           <CardProductos
-            key={index}
+            key={pantalon._id}
             titulo={pantalon.TipoPantalon}
-            imagen={pantalon.Image}
-            onClick={() => handleverDetalle(pantalon.id)} // Suponiendo que pantalon tiene un id único
+            imagen={pantalon.Imagen}
+            onClick={() => handleverDetalle(pantalon._id)} 
           />
         ))}
-    <CardProductos titulo="Pantalones" imagen="/img/pantalones.jpg" onClick={handleverDetalle}/>
-    {/*
-    <CardProductos titulo="Pantalon" imagen="/img/pantalones.jpg"onClick={handleverDetalle} />
-    <CardProductos titulo="Pantalones" imagen="/img/pantalones.jpg"/>
-    <CardProductos titulo="Pantalones" imagen="/img/pantalones.jpg"/>
-    <CardProductos titulo="Pantalones" imagen="/img/pantalones.jpg"/>
-    <CardProductos titulo="Pantalones" imagen="/img/pantalones.jpg"/>
-    */} 
+   
      </div> 
       <div class="ContenedorDetalle">
       {

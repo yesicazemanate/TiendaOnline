@@ -33,10 +33,7 @@ export default function Vestidos() {
     <div class="ContenedorDedetalleYvestidosGeneral">
    <div class="ContenedorPrincipalCartas">
         
-   {/* <CardProductos 
-   titulo="NO BD" 
-   imagen="/img/12484244.jpg" 
-   onClick={handleverDetalleVestidos}/> */}
+   
     {
       Vestidos.map((short)=>(
         <CardProductos

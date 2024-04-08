@@ -17,7 +17,7 @@ export default function Blusas() {
       try{
       const respuesta = await axios.get('http://127.0.0.1:5000/blusa/get')
       const data = respuesta.data
-      setBlusas(data.Blusas)
+      setBlusas(data)
       }
       catch(error){
         console.log(error)
@@ -28,13 +28,12 @@ export default function Blusas() {
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
-        <CardProductos titulo='NO BD' imagen="/img/blusa.png " onClick={handleverDetalle}/>
         {
-          Blusas.map((blusas,index)=>(
+          Blusas.map((blusas)=>(
             <CardProductos
-            key={index}
+            key={blusas}
             titulo={blusas.TipoBlusa}
-            imagen={blusas.Image}
+            imagen={blusas.Imagen}
             onClick={handleverDetalle}
             />
           ))
