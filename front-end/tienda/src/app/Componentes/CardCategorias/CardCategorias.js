@@ -13,7 +13,7 @@ export default function CardCategorias({ title, image }) {
                 </div>
 
                 <div className="card-categoria">
-                    <h1 class="textoCategoria">{title}</h1>
+                    <h1 className="textoCategoria">{title}</h1>
                 </div>
 
             </div>

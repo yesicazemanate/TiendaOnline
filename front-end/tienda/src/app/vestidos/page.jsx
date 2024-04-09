@@ -26,12 +26,12 @@ export default function Vestidos() {
     }
     consumo();
   },[])
-  console.log(Vestidos.Imagen)
+  console.log(Vestidos)
    return (
     <>   
 
-    <div class="ContenedorDedetalleYvestidosGeneral">
-   <div class="ContenedorPrincipalCartas">
+    <div className="ContenedorDedetalleYvestidosGeneral">
+   <div className="ContenedorPrincipalCartas">
         
    {/* <CardProductos 
    titulo="NO BD" 
