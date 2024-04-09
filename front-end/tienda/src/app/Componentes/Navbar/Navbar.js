@@ -1,7 +1,27 @@
 import Image from "next/image"
-
+import { useEffect } from 'react';
 import "./navbar.css"
 export default function Navbar() {
+
+  useEffect(() => {
+    let lastScrollTop = 0;
+
+    function onScroll() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop) {
+        // Desplazamiento hacia abajo
+        document.querySelector('nav').classList.add('nav-up');
+      } else {
+        // Desplazamiento hacia arriba
+        document.querySelector('nav').classList.remove('nav-up');
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para navegadores móviles
+    }
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <nav>
