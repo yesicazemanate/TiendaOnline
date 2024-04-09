@@ -14,7 +14,7 @@ export default function Shorts() {
       try{
         const respuesta = await axios.get('http://127.0.0.1:5000/short/get ') 
         const data = respuesta.data
-        setShorts(data.short)
+        setShorts(data)
       }
       catch(error){
         console.log(error)
@@ -25,13 +25,13 @@ export default function Shorts() {
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
-        <CardProductos titulo="NO BD" imagen="/img/shorts.jpg" onClick={handleverDetalle}/>
+        
         {
-          Shorts.map((short,index)=>(
+          Shorts.map((short)=>(
             <CardProductos
-            key={index}
+            key={short}
             titulo={short.TipoShort}
-            imagen={short.Image}
+            imagen={short.Imagen}
             onClick={handleverDetalle}
             />
           ))
