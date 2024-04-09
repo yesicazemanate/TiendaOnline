@@ -34,7 +34,7 @@ export default function Sudaderas() {
 
     {Sudadera.map((sudadera) => (
             <CardProductos
-              key={sudadera}
+              key={sudadera._id}
               titulo={sudadera.TipoSudadera}  
               imagen={sudadera.Imagen} 
               onClick={handleverDetalleSudaderas}

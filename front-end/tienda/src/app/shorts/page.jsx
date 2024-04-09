@@ -29,7 +29,7 @@ export default function Shorts() {
         {
           Shorts.map((short)=>(
             <CardProductos
-            key={short}
+            key={short._id}
             titulo={short.TipoShort}
             imagen={short.Imagen}
             onClick={handleverDetalle}

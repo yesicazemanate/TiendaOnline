@@ -1,3 +1,4 @@
+"use client"
 import CardProductos from "../Componentes/CardProductos/CardProductos";
 import Detailvista from "../detalle/page";
 import "../vestidos/StyleVestidos.css"
@@ -31,7 +32,7 @@ export default function Blusas() {
         {
           Blusas.map((blusas)=>(
             <CardProductos
-            key={blusas}
+            key={blusas._id}
             titulo={blusas.TipoBlusa}
             imagen={blusas.Imagen}
             onClick={handleverDetalle}

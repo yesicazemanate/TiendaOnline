@@ -1,7 +1,7 @@
 "use client"
 import "./styleDetalle.css"
 import Image from "next/image"
-export default function Detailvista({imagenn,descripcion, nombre, precio}) {
+export default function Detailvista({imagenn,color, nombre, precio}) {
   return (
     <div class="ContenedorDetalleComponente">
       <div class="DetalleImagen">
@@ -13,7 +13,7 @@ export default function Detailvista({imagenn,descripcion, nombre, precio}) {
       </div>
       <div class="precioDescripcionDetalle">
         <p class="PrecioDetalle">${precio}</p>
-        <p class="descripcionDetalle">{descripcion}</p>
+        <p class="descripcionDetalle">{color}</p>
       </div>
       {/* <div>
         <p>{descripcion}</p>

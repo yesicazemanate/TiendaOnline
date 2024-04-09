@@ -7,10 +7,13 @@ import { useState,useEffect } from "react"
 export default function Vestidos() {
   const [verDetailVestidos,setverDetailVestidos] = useState('vestidos')
   
-  const handleverDetalleVestidos =() => {
-    setverDetailVestidos(verDetailVestidos === 'vestidos'? 'detalle': 'vestidos')
-  }
-  
+  // const handleverDetalleVestidos =() => {
+  //   setverDetailVestidos(verDetailVestidos === 'vestidos'? 'detalle': 'vestidos')
+  //   //setverDetailVestidos(productoPorId)
+  // }
+  const handleverDetalleVestidos = (productId) => {
+    setverDetailVestidos(productId);
+  };
   //Consumo Api
   const [Vestidos, setVestidos] = useState([]);
   useEffect(()=>{
@@ -35,23 +38,34 @@ export default function Vestidos() {
         
    
     {
-      Vestidos.map((short)=>(
+      Vestidos.map((Vestidos)=>(
         <CardProductos
-        key={short._id}
-        titulo={short.TipoVestido}
-        imagen={short.Imagen}
-        onClick={handleverDetalleVestidos}
+      
+        key={Vestidos._id}
+        titulo={Vestidos.TipoVestido}
+        imagen={Vestidos.Imagen}
+        onClick={() => handleverDetalleVestidos(Vestidos._id)}
         />
       ))
     }
   </div>
 
    <div class="ContenedorDetalle">
-   {verDetailVestidos === 'detalle'&& <Detailvista
-     imagenn="/img/Vestidos.jpg" 
-     nombre="SHORT 1"
-    descripcion="Short Blanco con conturon Negro echo En MEDELLIN"
-     precio="20.000"/>}
+     {
+      Vestidos.map((vestido)=>{
+        if(verDetailVestidos === vestido._id){
+          return(
+            <Detailvista
+            key={vestido._id}
+            imagenn={vestido.Imagen} 
+            nombre={vestido.TipoVestido}
+            precio={vestido.Precio}
+            
+            />
+          )
+        }
+      })
+     }
 
     
 </div>
