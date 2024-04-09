@@ -4,11 +4,17 @@
     flex-wrap: wrap;
     width: 100%;
     z-index: 10;
+    height: auto;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.268);
+    z-index: 50;
     }
     .ContenedorPrincipalCartas {
         margin: 10px;
         display: grid;
-        width: 65%;
+        width:65%;
+        margin-top: 90px;
+        height: 100%;
         grid-template-columns: 22% 22% 22% 22% ;
         grid-gap:20px;
         justify-content: center;

@@ -38,11 +38,12 @@ export default function Home() {
   return (
     <>
    
-
+  
       <div className="PrincipalVistaGeneral">
 
-      <Navbar />
+      
         <div class="Contenedor-principal-categorias">
+        <Navbar />
       {/* VESTIDO*/}
         <div className="contenedor-cartas">
           <div className="card-categorias">

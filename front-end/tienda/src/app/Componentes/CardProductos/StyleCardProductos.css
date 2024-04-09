@@ -21,6 +21,11 @@
     justify-content: center;
    
 }
+.ImagenTamaño{
+    width: 95%;
+    height: 250px;
+    border-radius: 10px;
+}
 .Texto{
     background-color: white;
     border-radius: 10px;

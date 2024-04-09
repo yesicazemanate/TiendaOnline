@@ -6,7 +6,7 @@ export default function CardProductos({imagen, titulo, onClick}) {
    <>
     <div onClick={onClick} class= "contenedorDeCartasProducto">
         <div class="Imagen">
-            <Image src={imagen} width={150} height={150}></Image>
+            <Image class="ImagenTamaño" src={imagen} width={150} height={150}></Image>
         </div>
         <div class="Texto">
             <h2>{titulo}</h2>
