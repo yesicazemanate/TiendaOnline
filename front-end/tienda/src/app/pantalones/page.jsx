@@ -6,10 +6,12 @@ import { useEffect } from "react";
 import axios from 'axios';
 export default function Pantalones() {
   const [verdetallePantalones, setverdetallePantalones] = useState('pantalones')
-
-  const handleverDetalle = () => {
-    setverdetallePantalones(verdetallePantalones==='pantalones'? 'detalle': 'detalle')
+  const handleverDetalle = (productId) => {
+    setverdetallePantalones(productId)
   }
+  // const handleverDetalle = () => {
+  //   setverdetallePantalones(verdetallePantalones==='pantalones'? 'detalle': 'detalle')
+  // }
   const [Pantalones, setPantalones] = useState([ ]);
 
   useEffect(() => {
@@ -29,24 +31,32 @@ export default function Pantalones() {
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
-      {Pantalones.map((pantalon) => (
+      {Pantalones.map((Pantalones) => (
           <CardProductos
-            key={pantalon._id}
-            titulo={pantalon.TipoPantalon}
-            imagen={pantalon.Imagen}
-            onClick={() => handleverDetalle(pantalon._id)} 
+            key={Pantalones._id}
+            titulo={Pantalones.Precio}
+            imagen={Pantalones.Imagen}
+            onClick={() => handleverDetalle(Pantalones._id)} 
           />
         ))}
    
      </div> 
       <div class="ContenedorDetalle">
       {
-        verdetallePantalones==='detalle' && <Detailvista
-        precio="30.000"
-      nombre="PANTALONES"
-      descripcion="Echas en Cartegena de Indias, diseño unico, ultimas unidades a la venta"
-      imagenn="/img/pantalones.jpg"
-        />
+        Pantalones.map((PantalonId)=>{
+          if(verdetallePantalones === PantalonId._id){
+            return(
+              <Detailvista
+              key={PantalonId._id}
+              imagenn={PantalonId.Imagen}
+              nombre={PantalonId.TipoPantalon}
+              precio={PantalonId.Precio}
+              color={PantalonId.Color}
+              talla={PantalonId.Talla}
+              />
+            )
+          }
+        })
       }
       </div>
     </div>

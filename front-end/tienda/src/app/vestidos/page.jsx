@@ -40,7 +40,6 @@ export default function Vestidos() {
     {
       Vestidos.map((Vestidos)=>(
         <CardProductos
-      
         key={Vestidos._id}
         titulo={Vestidos.TipoVestido}
         imagen={Vestidos.Imagen}
@@ -60,7 +59,8 @@ export default function Vestidos() {
             imagenn={vestido.Imagen} 
             nombre={vestido.TipoVestido}
             precio={vestido.Precio}
-            
+            color={vestido.Color}
+            talla={vestido.Talla}
             />
           )
         }

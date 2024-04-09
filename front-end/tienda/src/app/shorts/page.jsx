@@ -1,3 +1,4 @@
+"use client"
 import CardProductos from "../Componentes/CardProductos/CardProductos"
 import axios from "axios";
 import { useState,useEffect } from "react"
@@ -5,8 +6,11 @@ import Detailvista from "../detalle/page"
 import "../vestidos/StyleVestidos.css"
 export default function Shorts() {
   const [verDetalleShorts, setverdetalleSudaderas] = useState('shorts')
-  const handleverDetalle = () => {
-    setverdetalleSudaderas(verDetalleShorts=== 'shorts'? 'detalle': 'shorts')
+  // const handleverDetalle = () => {
+  //   setverdetalleSudaderas(verDetalleShorts=== 'shorts'? 'detalle': 'shorts')
+  // }
+  const handleverDetalle = (productId) => {
+    setverdetalleSudaderas(productId)
   }
   const [Shorts, setShorts] = useState([])
   useEffect(()=> {
@@ -27,23 +31,34 @@ export default function Shorts() {
       <div class="ContenedorPrincipalCartas">
         
         {
-          Shorts.map((short)=>(
+          Shorts.map((Shorts)=>(
             <CardProductos
-            key={short._id}
-            titulo={short.TipoShort}
-            imagen={short.Imagen}
-            onClick={handleverDetalle}
+            key={Shorts._id}
+            titulo={Shorts.TipoShort}
+            imagen={Shorts.Imagen}
+            onClick={()=> handleverDetalle(Shorts._id)}
             />
           ))
         }
        
       </div>
       <div class="ContenedorDetalle">
-        {verDetalleShorts === 'detalle' && <Detailvista
-        precio="30.000"
-        nombre="SHORTS"
-        descripcion="Echas en Cartegena de Indias, diseño unico, ultimas unidades a la venta"
-        imagenn="/img/shorts.jpg"/>}
+        {
+          Shorts.map((short)=>{
+            if(verDetalleShorts === short._id){
+              return(
+                <Detailvista
+                key={short._id}
+                imagenn={short.Imagen}
+                nombre={short.TipoShort}
+                precio={short.Precio}
+                color={short.Color}
+                talla={short.Talla}
+                />
+              )
+            }
+          })
+        }
       </div>
     </div>
   )

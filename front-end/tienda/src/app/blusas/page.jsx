@@ -6,11 +6,12 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 export default function Blusas() {
   const [verdetalleBlusas, setverdetalleBlusas] = useState('blusas')
-
-  const handleverDetalle = () => {
-    setverdetalleBlusas(verdetalleBlusas==='blusas'? 'detalle': 'blusas')
+  // const handleverDetalle = () => {
+  //   setverdetalleBlusas(verdetalleBlusas==='blusas'? 'detalle': 'blusas')
+  // }
+  const handleverDetalle = (productoPorId) =>{
+    setverdetalleBlusas(productoPorId)
   }
-
   //Consumo Api
   const [Blusas,setBlusas]= useState([])
   useEffect(()=>{
@@ -30,23 +31,33 @@ export default function Blusas() {
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
         {
-          Blusas.map((blusas)=>(
+          Blusas.map((Blusas)=>(
             <CardProductos
-            key={blusas._id}
-            titulo={blusas.TipoBlusa}
-            imagen={blusas.Imagen}
-            onClick={handleverDetalle}
+            key={Blusas._id}
+            titulo={Blusas.TipoBlusa}
+            imagen={Blusas.Imagen}
+            onClick={()=>handleverDetalle(Blusas._id)}
             />
           ))
         }
       </div>
       <div class="ContenedorDetalle">
-        {verdetalleBlusas ==='detalle' && <Detailvista
-        precio="30.000"
-        nombre="BLUSAS"
-        descripcion="Echas en Cartegena de Indias, diseño unico, ultimas unidades a la venta"
-        imagenn="/img/blusa.png"
-        />}
+        {
+          Blusas.map((blusasById)=>{
+            if(verdetalleBlusas === blusasById._id){
+              return(
+                <Detailvista
+                key={blusasById._id}
+                imagenn={blusasById.Imagen}
+                nombre={blusasById.TipoBlusa}
+                precio={blusasById.Precio}
+                color={blusasById.Color}
+                talla={blusasById.Talla}
+                />
+              )
+            }
+          })
+        }
       </div>
     </div>
   )

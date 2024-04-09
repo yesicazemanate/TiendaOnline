@@ -13,7 +13,10 @@
     height: 350px;
     object-fit: cover;
 }
-
+.NombreProducto{
+    font-size: 25px;
+    font-family: bold;
+}
 .ImagenDetalle{
     border-radius: 10px;
     width:100%;
@@ -66,20 +69,18 @@
 .ContenedorTallas{
     width:100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
+    gap: 15px;
 }
 .ContainerTallas{
-    width: 60%;
+
   display: flex;
   justify-content: center;
     padding: 10px;
 }
 .textoTallas{
     text-align: center;
-    width: 40%;
     font-weight: bold;
 }
 .Talla{
