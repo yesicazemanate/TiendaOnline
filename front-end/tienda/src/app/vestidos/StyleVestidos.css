@@ -6,7 +6,9 @@
     z-index: 10;
     height: auto;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.268);
+    background-color:#fff8f4;
+    justify-content: center;
+    align-items: center;
     z-index: 50;
     }
     .ContenedorPrincipalCartas {
