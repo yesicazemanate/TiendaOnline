@@ -51,7 +51,7 @@ export default function Shorts() {
                 key={short._id}
                 imagenn={short.Imagen}
                 nombre={short.TipoShort}
-                precio={short.Precio}
+                precio={short.precio}
                 color={short.Color}
                 talla={short.Talla}
                 />

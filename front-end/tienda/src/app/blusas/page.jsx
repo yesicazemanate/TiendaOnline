@@ -27,6 +27,7 @@ export default function Blusas() {
     }
     consumo();
   },[])
+  console.log(Blusas)
   return (
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
@@ -50,7 +51,7 @@ export default function Blusas() {
                 key={blusasById._id}
                 imagenn={blusasById.Imagen}
                 nombre={blusasById.TipoBlusa}
-                precio={blusasById.Precio}
+                precio={blusasById.precio}
                 color={blusasById.Color}
                 talla={blusasById.Talla}
                 />

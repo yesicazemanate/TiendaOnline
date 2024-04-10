@@ -50,7 +50,7 @@ export default function Pantalones() {
               key={PantalonId._id}
               imagenn={PantalonId.Imagen}
               nombre={PantalonId.TipoPantalon}
-              precio={PantalonId.Precio}
+              precio={PantalonId.precio}
               color={PantalonId.Color}
               talla={PantalonId.Talla}
               />

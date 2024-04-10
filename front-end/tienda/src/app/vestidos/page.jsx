@@ -58,7 +58,7 @@ export default function Vestidos() {
             key={vestido._id}
             imagenn={vestido.Imagen} 
             nombre={vestido.TipoVestido}
-            precio={vestido.Precio}
+            precio={vestido.precio}
             color={vestido.Color}
             talla={vestido.Talla}
             />
