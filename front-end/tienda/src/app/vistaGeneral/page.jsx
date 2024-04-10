@@ -89,6 +89,7 @@ import Pantalones from "../pantalones/page";
         </div>
 
       <div class="VerProductosEnVistaGeneral">
+
         {verVestidos === 'vestidos' && <Vestidos />}
         {verSudaderas == 'sudaderas' && <Sudaderas />}
         {verShorts === 'shorts' && <Shorts />}
