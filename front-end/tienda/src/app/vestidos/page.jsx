@@ -33,7 +33,10 @@ export default function Vestidos() {
    return (
     <>   
 
+   <h2 class="TextoCategoria">CATEGORIA DE VESTIDOS</h2>
+  
     <div class="ContenedorDedetalleYvestidosGeneral">
+      
    <div class="ContenedorPrincipalCartas">
         
    

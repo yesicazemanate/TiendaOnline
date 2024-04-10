@@ -29,12 +29,14 @@ export default function Pantalones() {
   }, []); 
 
   return (
+    <>
+     <h2 class="TextoCategoria">CATEGORIA DE PANTALONES</h2>
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
       {Pantalones.map((Pantalones) => (
           <CardProductos
             key={Pantalones._id}
-            titulo={Pantalones.Precio}
+            titulo={Pantalones.TipoPantalon}
             imagen={Pantalones.Imagen}
             onClick={() => handleverDetalle(Pantalones._id)} 
           />
@@ -50,7 +52,7 @@ export default function Pantalones() {
               key={PantalonId._id}
               imagenn={PantalonId.Imagen}
               nombre={PantalonId.TipoPantalon}
-              precio={PantalonId.Precio}
+              precio={PantalonId.precio}
               color={PantalonId.Color}
               talla={PantalonId.Talla}
               />
@@ -60,5 +62,6 @@ export default function Pantalones() {
       }
       </div>
     </div>
+    </>
   )
 }

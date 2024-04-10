@@ -96,6 +96,7 @@ export default function Home() {
         </div>
        
       <div class="VerProductosEnVistaGeneral">
+      
         {verVestidos === 'vestidos' && <Vestidos />}
         {verSudaderas == 'sudaderas' && <Sudaderas />}
         {verShorts === 'shorts' && <Shorts />}

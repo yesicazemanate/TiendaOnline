@@ -29,6 +29,7 @@ export default function Sudaderas() {
   }, []);
   return (
     <>
+     <h2 class="TextoCategoria">CATEGORIA DE SUDADERAS</h2>
     <div class="ContenedorDedetalleYvestidosGeneral">
         <div class="ContenedorPrincipalCartas">
     {Sudadera.map((Sudaderas) => (
