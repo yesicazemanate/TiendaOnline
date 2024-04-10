@@ -32,7 +32,7 @@ export default function Blusas() {
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
         {
-          Blusas.map((Blusas)=>(
+         Blusas && Blusas.map((Blusas)=>(
             <CardProductos
             key={Blusas._id}
             titulo={Blusas.TipoBlusa}
@@ -44,7 +44,7 @@ export default function Blusas() {
       </div>
       <div class="ContenedorDetalle">
         {
-          Blusas.map((blusasById)=>{
+          Blusas && Blusas.map((blusasById)=>{
             if(verdetalleBlusas === blusasById._id){
               return(
                 <Detailvista
@@ -61,5 +61,6 @@ export default function Blusas() {
         }
       </div>
     </div>
+    
   )
 }
