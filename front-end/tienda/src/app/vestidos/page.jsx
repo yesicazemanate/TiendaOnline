@@ -6,11 +6,7 @@ import "./StyleVestidos.css"
 import { useState,useEffect } from "react"
 export default function Vestidos() {
   const [verDetailVestidos,setverDetailVestidos] = useState('vestidos')
-  
-  // const handleverDetalleVestidos =() => {
-  //   setverDetailVestidos(verDetailVestidos === 'vestidos'? 'detalle': 'vestidos')
-  //   //setverDetailVestidos(productoPorId)
-  // }
+
   const handleverDetalleVestidos = (productId) => {
     setverDetailVestidos(productId);
   };
@@ -32,19 +28,11 @@ export default function Vestidos() {
   console.log(Vestidos)
    return (
     <>   
-
-<<<<<<< HEAD
-   <h2 class="TextoCategoria">CATEGORIA DE VESTIDOS</h2>
-  
-    <div class="ContenedorDedetalleYvestidosGeneral">
-      
-   <div class="ContenedorPrincipalCartas">
-=======
+ <h2 class="TextoCategoria">CATEGORIA DE VESTIDOS</h2>
     <div className="ContenedorDedetalleYvestidosGeneral">
    <div className="ContenedorPrincipalCartas">
->>>>>>> a68d1dd3eefec97a377b40bd0874285e325f71fa
         
-   
+   <div>kmfksnfksnfknsknj</div>
     {
       Vestidos.map((Vestidos)=>(
         <CardProductos
