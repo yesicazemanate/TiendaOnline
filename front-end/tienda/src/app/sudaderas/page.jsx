@@ -49,7 +49,7 @@ export default function Sudaderas() {
             key={sudadera._id}
             imagenn={sudadera.Imagen}
             nombre={sudadera.TipoSudadera}
-            precio={sudadera.Precio}
+            precio={sudadera.precio}
             color={sudadera.Color}
             talla={sudadera.Talla}
             />

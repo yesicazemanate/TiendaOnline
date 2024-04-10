@@ -47,7 +47,7 @@ export default function Home() {
       {/* VESTIDO*/}
         <div className="contenedor-cartas">
           <div className="card-categorias">
-            <Image class="ImagenCategoria" value={setverVestidos} onClick={handleVestido} src="/img/vestidos.jpg" width={90} height={60} />
+            <Image className="ImagenCategoria" value={setverVestidos} onClick={handleVestido} src="/img/vestidos.jpg" width={90} height={60} alt="image" />
           </div>
           <div className="card-categorias">
             <h1 class="textoCategoria">Vestidos</h1>
@@ -95,8 +95,12 @@ export default function Home() {
         </div>
         </div>
        
+<<<<<<< HEAD
       <div class="VerProductosEnVistaGeneral">
       
+=======
+      <div className="VerProductosEnVistaGeneral">
+>>>>>>> a68d1dd3eefec97a377b40bd0874285e325f71fa
         {verVestidos === 'vestidos' && <Vestidos />}
         {verSudaderas == 'sudaderas' && <Sudaderas />}
         {verShorts === 'shorts' && <Shorts />}

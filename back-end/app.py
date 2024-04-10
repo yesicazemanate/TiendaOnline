@@ -19,10 +19,11 @@ def getBlusas():
             users.append({
                 '_id': str(ObjectId(doc['_id'])),
                 'TipoBlusa': doc['TipoBlusa'],
-                'Precio': doc['Precio'],
+                'precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
-                'Imagen': doc['Image']
+                'Imagen': doc['Image'],
+                'Descripcion': doc['Descripcion']
             })
         return jsonify(users)
     except Exception as e:
@@ -35,10 +36,11 @@ def get_blusa(id):
     return jsonify({
          '_id': str(ObjectId(blusas['_id'])),
                 'TipoBlusa': blusas['TipoBlusa'],
-                'Precio': blusas['Precio'],
+                'precio': blusas['precio'],
                 'Color': blusas['Color'],
                 'Talla': blusas['Talla'],
-                'Imagen': blusas['Image']
+                'Imagen': blusas['Image'],
+                'Descripcion': blusas['Descripcion']
     }
     )
         #POST
@@ -46,20 +48,22 @@ def get_blusa(id):
 def create_blusa():
     data = request.json
     TipoBlusa = data.get('TipoBlusa')
-    Precio = data.get('Precio')
+    precio = data.get('precio')
     Color = data.get('Color')
     Talla = data.get('Talla')
     Image = data.get('Image')
+    Descripcion = data.get('Descripcion')
 
-    if not all([TipoBlusa, Precio, Color, Talla, Image]):
+    if not all([TipoBlusa, precio, Color, Talla, Image, Descripcion]):
         return jsonify({'error': 'Se requieren todos los campos'}), 400
 
     blusa.insert_one({
         'TipoBlusa': TipoBlusa,
-        'Precio': Precio,
+        'precio': precio,
         'Color': Color,
         'Talla': Talla,
-        'Image':Image
+        'Image':Image,
+        'Descripcion' : Descripcion
     })
 
     return 'Datos recibidos correctamente'
@@ -69,7 +73,7 @@ def create_blusa():
 @app.route('/blusa/delete/<id>', methods=['DELETE'])
 def delete_blusa(id):
     blusa.delete_one({'_id':ObjectId(id)})
-    return jsonify('ususario eliminado')
+    return jsonify('blusa eliminada')
 
 
 #PUT
@@ -78,10 +82,11 @@ def update_blusa(id):
     
     blusa.update_one({'_id': ObjectId(id)}, {'$set': {
         'TipoBlusa': request.json.get('TipoBlusa', ''),
-        'Precio': request.json.get('Precio', ''),
+        'precio': request.json.get('precio', ''),
         'Color': request.json.get('Color', ''),
         'Talla': request.json.get('Talla', ''),
-        'Image':request.json.get('Image', '')
+        'Image':request.json.get('Image', ''),
+        'Descripcion': request.json.get('Descripcion', '')
     }})
     return jsonify({'msg': 'usuario actualizado'})
 
@@ -98,10 +103,11 @@ def getPantalon():
             pantalones.append({
                 '_id': str(ObjectId(doc['_id'])),
                 'TipoPantalon': doc['TipoPantalon'],
-                'Precio': doc['precio'],
+                'precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
-                'Imagen': doc['Image']
+                'Imagen': doc['Image'],
+                'Descripcion': doc['Descripcion']
             })
             
         return jsonify(pantalones), 200  # Devuelve los pantalones con código de estado 200 (OK)
@@ -119,7 +125,8 @@ def get_pantalon(id):
                 'precio': pantalones['precio'],
                 'Color': pantalones['Color'],
                 'Talla': pantalones['Talla'],
-                'Imagen': pantalones['Image']
+                'Imagen': pantalones['Image'],
+                'Descripcion': pantalones['Descripcion']
     })
 
 #POST
@@ -131,8 +138,9 @@ def create_pantalon():
     Color = data.get('Color')
     Talla = data.get('Talla')
     Image = data.get('Image')
+    Descripcion = data.get('Descripcion')
 
-    if not all([TipoPantalon, precio, Color, Talla, Image]):
+    if not all([TipoPantalon, precio, Color, Talla, Image, Descripcion]):
         return jsonify({'error': 'Se requieren todos los campos'}), 400
 
     pantalon.insert_one({
@@ -140,7 +148,8 @@ def create_pantalon():
         'precio': precio,
         'Color': Color,
         'Talla': Talla,
-        'Image':Image
+        'Image':Image,
+        'Descripcion': Descripcion
     })
 
     return 'Datos recibidos correctamente'
@@ -158,7 +167,8 @@ def update_pantalon(id):
         'precio': request.json.get('precio', ''),
         'Color': request.json.get('Color', ''),
         'Talla': request.json.get('Talla', ''),
-        'Image':request.json.get('Image', '')
+        'Image':request.json.get('Image', ''),
+        'Descripcion': request.json.get('Descripcion', '')
     }})
     return jsonify({'msg': 'pantalon actualizado'})
 #----------------------------------SHORT------------------------------------
@@ -174,7 +184,8 @@ def getShort():
                 'precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
-                'Imagen': doc['Image']
+                'Imagen': doc['Image'],
+                'Descripcion': doc['Descripcion']
             })
             
         return jsonify(shorts), 200  # Devuelve los pantalones con código de estado 200 (OK)
@@ -192,7 +203,8 @@ def get_short(id):
                 'precio': shorts['precio'],
                 'Color': shorts['Color'],
                 'Talla': shorts['Talla'],
-                'Imagen': shorts['Image']
+                'Imagen': shorts['Image'],
+                'Descripcion': shorts['Descripcion']
     })
 
 #POST
@@ -204,8 +216,9 @@ def create_short():
     Color = data.get('Color')
     Talla = data.get('Talla')
     Image = data.get('Image')
+    Descripcion = data.get('Descripcion')
 
-    if not all([TipoShort, precio,  Color, Talla , Image]):
+    if not all([TipoShort, precio,  Color, Talla , Image, Descripcion]):
         return jsonify({'error': 'Se requieren todos los campos'}), 400
 
     short.insert_one({
@@ -213,7 +226,8 @@ def create_short():
         'precio': precio,
         'Color': Color,
         'Talla': Talla,
-        'Image':Image
+        'Image':Image,
+        'Descripcion': Descripcion
     })
 #DELETE
 @app.route('/short/delete/<id>', methods=['DELETE'])
@@ -229,7 +243,8 @@ def update_short(id):
         'precio': request.json.get('precio', ''),
         'Color': request.json.get('Color', ''),
         'Talla': request.json.get('Talla', ''),
-        'Image':request.json.get('Image', '')
+        'Image':request.json.get('Image', ''),
+        'Descripcion': request.json.get('Descripcion', '')
     }})
     return jsonify({'msg': 'short actualizado'})
 
@@ -246,7 +261,8 @@ def getSudadera():
                 'precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
-                'Imagen': doc['Image']
+                'Imagen': doc['Image'],
+                'Descripcion': doc['Descripcion']
             })
             
         return jsonify(sudaderas), 200  # Devuelve los pantalones con código de estado 200 (OK)
@@ -264,7 +280,8 @@ def get_sudadera(id):
                 'precio': sudaderas['precio'],
                 'Color': sudaderas['Color'],
                 'Talla': sudaderas['Talla'],
-                'Imagen': sudaderas['Image']
+                'Imagen': sudaderas['Image'],
+                'Descripcion': sudaderas['Descripcion']
     })
 
 #POST
@@ -276,8 +293,9 @@ def create_sudadera():
     Color = data.get('Color')
     Talla = data.get('Talla')
     Image = data.get('Image')
+    Descripcion = data.get('Descripcion')
 
-    if not all([TipoSudadera, precio, Color, Talla, Image]):
+    if not all([TipoSudadera, precio, Color, Talla, Image, Descripcion]):
         return jsonify({'error': 'Se requieren todos los campos'}), 400
 
     sudadera.insert_one({
@@ -285,7 +303,8 @@ def create_sudadera():
         'precio': precio,
         'Color': Color,
         'Talla': Talla,
-        'Image':Image
+        'Image':Image,
+        'Descripcion': Descripcion
     })
 #DELETE
 @app.route('/sudadera/delete/<id>', methods=['DELETE'])
@@ -301,7 +320,8 @@ def update_sudadera(id):
         'precio': request.json.get('precio', ''),
         'Color': request.json.get('Color', ''),
         'Talla': request.json.get('Talla', ''),
-        'Image':request.json.get('Image', '')
+        'Image':request.json.get('Image', ''),
+        'Descripcion': request.json.get('Descripcion', '')
     }})
     return jsonify({'msg': 'sudadera actualizado'})
 
@@ -318,7 +338,8 @@ def getvestido():
                 'precio': doc['precio'],
                 'Color': doc['Color'],
                 'Talla': doc['Talla'],
-                'Imagen': doc['Image']
+                'Imagen': doc['Image'],
+                'Descripcion': doc['Descripcion']
             })
             
         return jsonify(vestidos), 200  # Devuelve los pantalones con código de estado 200 (OK)
@@ -335,7 +356,8 @@ def get_vestido(id):
                 'precio': vestidos['precio'],
                 'Color': vestidos['Color'],
                 'Talla': vestidos['Talla'],
-                'Imagen': vestidos['Image']
+                'Imagen': vestidos['Image'],
+                'Descripcion': vestidos['Descripcion']
     })
 #POST
 @app.route('/vestido/post', methods=['POST'])
@@ -346,8 +368,9 @@ def create_vestido():
     Color = data.get('Color')
     Talla = data.get('Talla')
     Image = data.get('Image')
+    Descripcion = data.get('Descripcion')
 
-    if not all([TipoVestido, precio, Color, Talla, Image]):
+    if not all([TipoVestido, precio, Color, Talla, Image, Descripcion]):
         return jsonify({'error': 'Se requieren todos los campos'}), 400
 
     vestido.insert_one({
@@ -355,7 +378,8 @@ def create_vestido():
         'precio': precio,
         'Color': Color,
         'Talla': Talla,
-        'Image':Image
+        'Image':Image,
+        'Descripcion': Descripcion
     })
 
 #DELETE
@@ -369,10 +393,11 @@ def update_vestido(id):
     
     vestido.update_one({'_id': ObjectId(id)}, {'$set': {
         'TipoVestido': request.json.get('TipoVestido', ''),
-        'precio': request.json.get('Precio', ''),
+        'precio': request.json.get('precio', ''),
         'Color': request.json.get('Color', ''),
         'Talla': request.json.get('Talla', ''),
-        'Image':request.json.get('Image', '')
+        'Image':request.json.get('Image', ''),
+        'Descripcion': request.json.get('Descripcion', '')
     }})
     return jsonify({'msg': 'vestido actualizado'})
 if __name__ == "__main__":

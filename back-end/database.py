@@ -10,6 +10,7 @@ def dbConnection():
     try: 
         client = MongoClient(MONGO_URI, tlsCAFile=ca)
         db = client["YemsbClothes"]
+        print("conexion a la base de datos exitosa")
     except ConnectionError:
         print('Error de conexion de base de datos')
     return db

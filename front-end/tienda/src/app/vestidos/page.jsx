@@ -29,15 +29,20 @@ export default function Vestidos() {
     }
     consumo();
   },[])
-  console.log(Vestidos.Imagen)
+  console.log(Vestidos)
    return (
     <>   
 
+<<<<<<< HEAD
    <h2 class="TextoCategoria">CATEGORIA DE VESTIDOS</h2>
   
     <div class="ContenedorDedetalleYvestidosGeneral">
       
    <div class="ContenedorPrincipalCartas">
+=======
+    <div className="ContenedorDedetalleYvestidosGeneral">
+   <div className="ContenedorPrincipalCartas">
+>>>>>>> a68d1dd3eefec97a377b40bd0874285e325f71fa
         
    
     {
@@ -61,7 +66,7 @@ export default function Vestidos() {
             key={vestido._id}
             imagenn={vestido.Imagen} 
             nombre={vestido.TipoVestido}
-            precio={vestido.Precio}
+            precio={vestido.precio}
             color={vestido.Color}
             talla={vestido.Talla}
             />

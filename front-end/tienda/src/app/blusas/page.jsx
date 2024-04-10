@@ -27,6 +27,7 @@ export default function Blusas() {
     }
     consumo();
   },[])
+  console.log(Blusas)
   return (
     <>
      <h2 class="TextoCategoria">CATEGORIA DE BLUSAS</h2>
@@ -52,7 +53,7 @@ export default function Blusas() {
                 key={blusasById._id}
                 imagenn={blusasById.Imagen}
                 nombre={blusasById.TipoBlusa}
-                precio={blusasById.Precio}
+                precio={blusasById.precio}
                 color={blusasById.Color}
                 talla={blusasById.Talla}
                 />
