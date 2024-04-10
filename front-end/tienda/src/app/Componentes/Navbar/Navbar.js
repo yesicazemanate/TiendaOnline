@@ -27,7 +27,7 @@ export default function Navbar() {
             </svg>
           </a>
           <a href="#">
-            <Image width={50} height={50}  src="icono-usuario.png" alt="Usuario" />
+            <Image width={50} height={50}  src="/icono-usuario.png" alt="Usuario" />
           </a>
         </div>
       </nav>
