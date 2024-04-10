@@ -8,10 +8,12 @@ import CardProductos from "../Componentes/CardProductos/CardProductos"
 export default function Sudaderas() {
   const [verdetalleSudaderas, setverdetalleSudaderas] = useState('sudaderas')
 
-  const handleverDetalleSudaderas = () => {
-    setverdetalleSudaderas(verdetalleSudaderas=== 'sudaderas'? 'detalle': 'sudaderas')
+  // const handleverDetalleSudaderas = () => {
+  //   setverdetalleSudaderas(verdetalleSudaderas=== 'sudaderas'? 'detalle': 'sudaderas')
+  // }
+  const handleVerDetalle = (productoById) =>{
+    setverdetalleSudaderas(productoById)
   }
-
   const [Sudadera, setSudadera] = useState([])
   useEffect(() => {
     const consumo = async () => {
@@ -29,24 +31,31 @@ export default function Sudaderas() {
     <>
     <div class="ContenedorDedetalleYvestidosGeneral">
         <div class="ContenedorPrincipalCartas">
-
-   
-
-    {Sudadera.map((sudadera) => (
+    {Sudadera.map((Sudaderas) => (
             <CardProductos
-              key={sudadera}
-              titulo={sudadera.TipoSudadera}  
-              imagen={sudadera.Imagen} 
-              onClick={handleverDetalleSudaderas}
+              key={Sudaderas._id}
+              titulo={Sudaderas.TipoSudadera}  
+              imagen={Sudaderas.Imagen} 
+              onClick={()=>handleVerDetalle(Sudaderas._id)}
             />
           ))}
     </div>
     <div class="ContenedorDetalle">
-      {verdetalleSudaderas === 'detalle' && <Detailvista 
-      precio="30.000"
-      nombre="SUDAERAS"
-      descripcion="Echas en Cartegena de Indias, diseño unico, ultimas unidades a la venta"
-      imagenn="/img/sudaderas.jpg"/>}
+      {Sudadera.map((sudadera)=>{
+        if(verdetalleSudaderas === sudadera._id){
+          return(
+            <Detailvista
+            key={sudadera._id}
+            imagenn={sudadera.Imagen}
+            nombre={sudadera.TipoSudadera}
+            precio={sudadera.Precio}
+            color={sudadera.Color}
+            talla={sudadera.Talla}
+            />
+          )
+        }
+      })
+      }
     </div>
     </div>
     </>

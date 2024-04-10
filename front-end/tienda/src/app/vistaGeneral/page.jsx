@@ -38,58 +38,59 @@ export default function Home() {
   return (
     <>
    
-
+  
       <div className="PrincipalVistaGeneral">
 
-      <Navbar />
-        <div className="Contenedor-principal-categorias">
+      
+        <div class="Contenedor-principal-categorias">
+        <Navbar />
       {/* VESTIDO*/}
         <div className="contenedor-cartas">
           <div className="card-categorias">
             <Image className="ImagenCategoria" value={setverVestidos} onClick={handleVestido} src="/img/vestidos.jpg" width={90} height={60} alt="image" />
           </div>
-          <div className="card-categoria">
-            <h1 className="textoCategoria">Vestidos</h1>
+          <div className="card-categorias">
+            <h1 class="textoCategoria">Vestidos</h1>
           </div>
         </div>
 
         {/* SUDADERAS */}
         <div className="contenedor-cartas">
-          <div className="card-categoria">
-            <Image className="ImagenCategoria" value={setverSudaderas} onClick={handleVerSudaderas} src="/img/sudaderas.jpg" width={90} height={60} alt="image"/>
+          <div className="card-categorias">
+            <Image class="ImagenCategoria" value={setverSudaderas} onClick={handleVerSudaderas} src="/img/sudaderas.jpg" width={90} height={60} />
           </div>
-          <div className="card-categoria">
-            <h1 className="textoCategoria">Sudaderas</h1>
+          <div className="card-categorias">
+            <h1 class="textoCategoria">Sudaderas</h1>
           </div>
         </div>
 
         {/* SHORTS */}
         <div className="contenedor-cartas">
-          <div className="card-categoria">
-            <Image className="ImagenCategoria" value={setVerShorts} onClick={handleVerShorts} src="/img/shorts.jpg" width={90} height={60} alt="image"/>
+          <div className="card-categorias">
+            <Image class="ImagenCategoria" value={setVerShorts} onClick={handleVerShorts} src="/img/shorts.jpg" width={90} height={60} />
           </div>
-          <div className="card-categoria">
-            <h1 className="textoCategoria"> Shorts</h1>
+          <div className="card-categorias">
+            <h1 class="textoCategoria"> Shorts</h1>
           </div>
         </div>
         
         {/* BLUSAS */}
         <div className="contenedor-cartas">
-          <div className="card-categoria">
-            <Image className="ImagenCategoria" value={setverBlusas} onClick={handleVerBlusas} src="/img/blusas.jpg" width={90} height={60} alt="image" />
+          <div className="card-categorias">
+            <Image class="ImagenCategoria" value={setverBlusas} onClick={handleVerBlusas} src="/img/blusas.jpg" width={90} height={60} />
           </div>
-          <div className="card-categoria">
-            <h1 className="textoCategoria">Blusas</h1>
+          <div className="card-categorias">
+            <h1 class="textoCategoria">Blusas</h1>
           </div>
         </div>
 
         {/* Pantalones */}
         <div className="contenedor-cartas">
-          <div className="card-categoria">
-            <Image className="ImagenCategoria" value={setverPantalones} onClick={handleverPantalones} src="/img/pantalones.jpg" width={90} height={60} alt="image"/>
+          <div className="card-categorias">
+            <Image class="ImagenCategoria" value={setverPantalones} onClick={handleverPantalones} src="/img/pantalones.jpg" width={90} height={60} />
           </div>
-          <div className="card-categoria">
-            <h1 className="textoCategoria">Pantalones</h1>
+          <div className="card-categorias">
+            <h1 class="textoCategoria">Pantalones</h1>
           </div>
         </div>
         </div>

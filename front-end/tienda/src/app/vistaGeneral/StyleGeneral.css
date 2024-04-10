@@ -3,15 +3,17 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
 }
 .Contenedor-principal-categorias {
-    margin-top: 80px;
+    margin-top: 150px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
     height: 30%;
-
+    position: absolute;
     
 }
 .card-categorias {
@@ -34,14 +36,21 @@
 }
 
 /* Estilos para el título dentro de las tarjetas */
-.textoCategoria{
+.textoCategoria {
     text-align: center;
     padding: 10px 0;
-  background-color: #cbc8c8;
-  border-radius: 10px;
+    background-color: rgb(245, 208, 182)
+    ;
+    border-radius: 10px;
     margin: 0;
-    /* Elimina los márgenes por defecto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición de transformación y sombra */
 }
+
+.textoCategoria:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para un efecto de profundidad */
+}
+
 
 /* Estilos para la imagen */
 .ImagenCategoria{

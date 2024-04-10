@@ -12,7 +12,7 @@ a {
 
 /* Estilos del navbar */
 nav {
-    background-color: #fff;
+    background-color: #E6CDB9;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,6 +24,7 @@ nav {
     width: 100%;
     z-index: 100;
 }
+
 
 .logo {
     width: 200px;
@@ -47,6 +48,18 @@ nav ul li {
 nav ul li a {
     font-size: 18px;
     font-weight: bold;
+    transition: color 0.3s ease, padding 0.3s ease;
+}
+
+nav ul li a:active, .iconos img:active {
+    transform: scale(0.9); /* Hace que el elemento parezca presionado */
+}
+
+
+nav ul li a:hover {
+    color: #C47B5D; /* Cambia esto al color deseado */
+    padding-bottom: 5px;
+    border-bottom: 2px solid #C47B5D; /* Cambia esto al color deseado */
 }
 
 .iconos {
@@ -56,7 +69,13 @@ nav ul li a {
 .iconos img {
     width: 20px;
     margin-left: 20px;
+    transition: transform 0.3s ease;
 }
+
+.iconos img:hover {
+    transform: scale(1.2); /* Hace que el ícono sea un poco más grande */
+}
+
 
 /* Estilos para responsive design */
 @media (max-width: 768px) {
@@ -83,4 +102,17 @@ nav ul li a {
     .iconos {
         justify-content: center;
     }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+nav {
+    animation: slideDown 0.5s ease forwards;
 }

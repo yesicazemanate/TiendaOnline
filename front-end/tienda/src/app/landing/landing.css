@@ -4,6 +4,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    color: #000000;
 }
 
 h1,
@@ -14,13 +15,13 @@ h3 {
 
 a {
     text-decoration: none;
-    color: #000;
+   
 }
 
 /* Estilos del header */
 
 header {
-    background-color: #fff;
+    background-color: #ca2121;
     padding: 20px;
 }
 
@@ -28,10 +29,11 @@ header img {
     width: 200px;
 }
 
+
 /* Estilos del hero */
 
 .hero {
-    background-color: #f5f5f5;
+    background-color: #E6CDB9;
     text-align: center;
     padding: 50px 20px;
 }
@@ -47,16 +49,34 @@ header img {
 }
 
 .hero a {
-    background-color: #000;
-    color: #fff;
+    background-color: #A58F82;
+    color: #000000;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
+    /* Agregar transición suave para el cambio de color de fondo */
+    transition: background-color 0.5s ease;
+    border-color: #EFE2D9;
 }
+
+/* Definir los estados de la animación */
+@keyframes cambioColor {
+    from { background-color: #A58F82; }
+    to { background-color: #BFA974; }
+}
+
+.hero a:hover {
+    /* Aplicar la animación al pasar el ratón sobre el botón */
+    animation-name: cambioColor;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* Mantener el estado final de la animación */
+}
+
 
 /* Estilos de la sección de nuevos arribos */
 
 .arrivals {
     padding: 50px 20px;
+    background-color: #EFE2D9;
 }
 
 .arrivals h2 {
@@ -67,15 +87,17 @@ header img {
 .productos {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 100px;
+    justify-content: center;
+    background-color: #E6CDB9;
 }
 
 .producto {
     width: 30.30%;
     margin: 10px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #EFE2D9;
     text-align: center;
+    border-radius: 5px;
 }
 
 .producto img {
@@ -93,13 +115,13 @@ header img {
 }
 
 .producto a {
-    background-color: #000000;
+    background-color: #A58F82;
     
     
     color: #fff
 }
 .venta-estacional{
-    background-color: #f5f5f5;
+    background-color: #EFE2D9;
         text-align: center;
         padding: 50px 20px;
 }

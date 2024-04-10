@@ -13,6 +13,7 @@ export default function Landing() {
                     <h2>ROPA ACCESORIOS</h2>
                     <a href="/vistaGeneral">COMPRAR AHORA</a>
                 </section>
+              
                 <section className="arrivals">
                     <h2>&nbsp;&nbsp;&nbsp; NUEVOS ARRIBOS</h2>
                     <div className="productos">

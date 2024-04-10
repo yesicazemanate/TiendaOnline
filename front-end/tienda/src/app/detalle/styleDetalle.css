@@ -4,8 +4,11 @@
     flex-direction: column;
     gap: 15px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid #EFE2D9;
     padding: 10px;
+    margin-top: 90px;
+    height: 550px;
+    background-color: white;
 }
 .DetalleImagen{
    position: relative;
@@ -13,7 +16,10 @@
     height: 350px;
     object-fit: cover;
 }
-
+.NombreProducto{
+    font-size: 25px;
+    font-family: bold;
+}
 .ImagenDetalle{
     border-radius: 10px;
     width:100%;
@@ -24,14 +30,14 @@
     bottom: 0;
    z-index: 10;
     border-radius: 10px;
-    background-color: white;
+    background-color:#BFA974;
     right: 0;
 
 }
 .MasDetalle:hover{
-    box-shadow: 0px 0px 10px rgb(93, 93, 180);
-    background-color: rgb(54, 54, 105);
-    color: white;
+    box-shadow: 0px 0px 10px #060500b4;
+    background-color: #E6CDB9;
+    color: black;
     cursor: pointer;
 }
 .NombreDetalle{
@@ -66,24 +72,22 @@
 .ContenedorTallas{
     width:100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
+    gap: 15px;
 }
 .ContainerTallas{
-    width: 60%;
+
   display: flex;
   justify-content: center;
     padding: 10px;
 }
 .textoTallas{
     text-align: center;
-    width: 40%;
     font-weight: bold;
 }
 .Talla{
-    background-color: rgb(32, 32, 81);
+    background-color:#BFA974;
     color: white;
     /* border: 1px solid black;*/
     border-radius: 5px; 
@@ -95,7 +99,7 @@
     transition: background-color 0.3s;
 }
 .Talla:hover {
-    background-color: #ddd;
+    background-color: #E6CDB9;
     color: black; 
 }
 
