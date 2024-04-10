@@ -29,6 +29,8 @@ export default function Blusas() {
   },[])
   console.log(Blusas)
   return (
+    <>
+     <h2 class="TextoCategoria">CATEGORIA DE BLUSAS</h2>
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
         {
@@ -61,6 +63,7 @@ export default function Blusas() {
         }
       </div>
     </div>
-    
+    </>
+
   )
 }

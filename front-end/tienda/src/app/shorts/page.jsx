@@ -27,6 +27,8 @@ export default function Shorts() {
     consumo();
   },[])
   return (
+    <>    
+     <h2 class="TextoCategoria">CATEGORIA DE SHORTS</h2>
     <div class="ContenedorDedetalleYvestidosGeneral">
       <div class="ContenedorPrincipalCartas">
         
@@ -61,5 +63,7 @@ export default function Shorts() {
         }
       </div>
     </div>
+    </>
+
   )
 }

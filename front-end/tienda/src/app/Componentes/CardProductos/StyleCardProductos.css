@@ -3,16 +3,16 @@
     padding: 10px;
     margin-left: 10px;
     width: 100%;
-    background-color: rgba(202, 198, 198, 0.397);
+    background-color: #E6CDB9;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     gap: 15px;
   transition: ease-in-out 0.3s; 
-  box-shadow:10px 20px 10px rgba(228, 106, 106, 0.178);
 }
 .contenedorDeCartasProducto:hover{
-    box-shadow:10px 20px 10px rgba(213, 107, 107, 0.5);
+    box-shadow:7px 7px 7px 7px #fce6d9;
     transform: translate(0px,-5px);
 }
 .Imagen{
@@ -31,5 +31,5 @@
     border-radius: 10px;
     text-align: center;
     font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
 }
